@@ -1,6 +1,15 @@
 export type UserRole = "employee" | "manager" | "operations";
-export type RequestStatus = "draft" | "pending" | "returned" | "approved" | "rejected" | "assigned" | "in_progress" | "completed";
-export type RequestCategory = "it_support" | "equipment" | "maintenance" | "access" | "other";
+export type RequestStatus =
+  | "draft"
+  | "pending"
+  | "returned"
+  | "approved"
+  | "rejected"
+  | "assigned"
+  | "in_progress"
+  | "completed";
+export type RequestCategory =
+  "it_support" | "equipment" | "maintenance" | "access" | "other";
 export type Priority = "low" | "medium" | "high";
 
 export interface User {
@@ -11,8 +20,17 @@ export interface User {
   manager_id?: number | null;
   department?: string | null;
 }
-export interface Person { id: number; name: string; email?: string; }
-export interface RequestComment { id: number; body: string; user?: Person | null; created_at: string | null; }
+export interface Person {
+  id: number;
+  name: string;
+  email?: string;
+}
+export interface RequestComment {
+  id: number;
+  body: string;
+  user?: Person | null;
+  created_at: string | null;
+}
 export interface RequestActivity {
   id: number;
   action: string;
@@ -53,6 +71,14 @@ export interface ApiResponse<T> {
 }
 export interface PaginatedResponse<T> extends ApiResponse<T[]> {
   meta: PageMeta;
-  links?: { first: string | null; last: string | null; prev: string | null; next: string | null };
+  links?: {
+    first: string | null;
+    last: string | null;
+    prev: string | null;
+    next: string | null;
+  };
 }
-export type RequestInput = Pick<ServiceRequest, "title" | "description" | "category" | "priority">;
+export type RequestInput = Pick<
+  ServiceRequest,
+  "title" | "description" | "category" | "priority"
+>;
