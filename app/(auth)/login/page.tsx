@@ -185,10 +185,6 @@ function LoginForm() {
             <ShieldCheck className="h-4 w-4 text-emerald-600" /> Protected by
             secure session authentication
           </div>
-          <p className="mt-5 text-center text-xs leading-5 text-slate-400">
-            Demo accounts are listed in the project README. There is no public
-            signup endpoint in this backend.
-          </p>
         </div>
       </main>
     </div>
